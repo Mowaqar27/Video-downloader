@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Video Downloader</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="wrapper">
+      <section class="card">
+        <h1>Video Downloader</h1>
+        <p class="subtitle">Download Instagram Reels, YouTube videos, and Pinterest videos in one place.</p>
+
+        <form id="downloadForm" class="download-form">
+          <label for="platform">Select platform</label>
+          <select id="platform" name="platform" required>
+            <option value="youtube">YouTube</option>
+            <option value="instagram">Instagram Reel</option>
+            <option value="pinterest">Pinterest</option>
+          </select>
+
+          <label for="videoUrl">Paste video link</label>
+          <div class="url-row">
+            <input
+              id="videoUrl"
+              name="videoUrl"
+              type="url"
+              placeholder="https://..."
+              autocomplete="off"
+              required
+            />
+            <button type="button" id="pasteBtn" class="secondary">Paste</button>
+          </div>
+
+          <button type="submit" class="primary">Download Video</button>
+        </form>
+
+        <p id="status" class="status" aria-live="polite"></p>
+        <a id="downloadLink" class="download-link" hidden>Download file</a>
+
+        <small class="note">
+          Note: This app requires <code>yt-dlp</code> installed on the server.
+        </small>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
